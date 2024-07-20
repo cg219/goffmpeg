@@ -6,7 +6,7 @@ import (
 	"io"
 	"os/exec"
 
-	"github.com/xfrr/goffmpeg/v2/ffmpeg/progress"
+	"github.com/cg219/goffmpeg/mente/ffmpeg/progress"
 )
 
 type Command struct {

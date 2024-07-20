@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	fferror "github.com/xfrr/goffmpeg/v2/ffmpeg/error"
+	fferror "github.com/cg219/goffmpeg/mente/ffmpeg/error"
 )
 
 var (

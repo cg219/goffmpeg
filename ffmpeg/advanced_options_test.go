@@ -355,6 +355,13 @@ func TestAdvancedOptions(t *testing.T) {
 				return c.WithStatsMuxPreFmt("0")
 			},
 		},
+		{
+			name:     "WithAudioBitrate",
+            expected: []string{"-b:a", "128K"},
+			fn: func(c *ffmpeg.Command) *ffmpeg.Command {
+				return c.WithAudioBitrate("128K")
+			},
+		},
 	}
 
 	for _, tc := range testCases {

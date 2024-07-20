@@ -20,6 +20,11 @@ func (c *Command) WithAudioRate(rate int) *Command {
 	return c
 }
 
+func (c *Command) WithAudioBitrate(bitrate string) *Command {
+    c.args = append(c.args, "-b:a", bitrate)
+    return c
+}
+
 // WithAudioChannels sets the number of audio channels.
 func (c *Command) WithAudioChannels(channels int) *Command {
 	c.args = append(c.args, "-ac", strconv.Itoa(channels))

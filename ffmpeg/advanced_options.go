@@ -1,5 +1,7 @@
 package ffmpeg
 
+import "strconv"
+
 // WithMap creates one or more streams in the output file. This option has two forms for specifying the data source(s): the first selects one or more streams from some input file (specified with -i), the second takes an output from some complex filtergraph (specified with -filter_complex or -filter_complex_script).
 func (c *Command) WithMap(m string) *Command {
 	c.args = append(c.args, "-map", m)
@@ -10,6 +12,12 @@ func (c *Command) WithMap(m string) *Command {
 func (c *Command) WithIgnoreUnknown() *Command {
 	c.args = append(c.args, "-ignore_unknown")
 	return c
+}
+
+// WithThreadsAmount will set the amount of cores ffmpeg will use
+func (c *Command) WithThreadAmount(amount int) *Command {
+    c.args = append(c.args, "-threads", strconv.Itoa(amount))
+    return c
 }
 
 // WithCopyUnknown allow input streams with unknown type to be copied instead of failing if copying such streams is attempted.

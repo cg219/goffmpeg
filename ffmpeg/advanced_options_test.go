@@ -20,6 +20,13 @@ func TestAdvancedOptions(t *testing.T) {
 			},
 		},
 		{
+			name:     "WithThreadAmount",
+			expected: []string{"-threads", "17"},
+			fn: func(c *ffmpeg.Command) *ffmpeg.Command {
+				return c.WithThreadAmount(17)
+			},
+		},
+		{
 			name:     "WithIgnoreUnknown",
 			expected: []string{"-ignore_unknown"},
 			fn: func(c *ffmpeg.Command) *ffmpeg.Command {

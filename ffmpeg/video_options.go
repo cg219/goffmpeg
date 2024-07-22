@@ -32,6 +32,12 @@ func (c *Command) WithDisableVideo() *Command {
 	return c
 }
 
+// WithSubtitleCodec force subtitle codec (‘copy’ to copy stream)
+func (c *Command) WithSubtitleCodec(codec string) *Command {
+    c.args = append(c.args, "-c:s", codec)
+	return c
+}
+
 // WithVideoCodec force video codec (‘copy’ to copy stream)
 func (c *Command) WithVideoCodec(codec string) *Command {
 	c.args = append(c.args, "-vcodec", codec)

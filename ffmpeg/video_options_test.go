@@ -48,6 +48,13 @@ func TestVideoOptions(t *testing.T) {
 			},
 		},
 		{
+			name:     "WithSubtitleCodec",
+            expected: []string{"-c:s", "copy"},
+			fn: func(c *ffmpeg.Command) *ffmpeg.Command {
+				return c.WithSubtitleCodec("copy")
+			},
+		},
+		{
 			name:     "WithVideoCodec",
 			expected: []string{"-vcodec", "10"},
 			fn: func(c *ffmpeg.Command) *ffmpeg.Command {

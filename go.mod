@@ -1,4 +1,3 @@
-// module github.com/xfrr/goffmpeg/v2
-module github.com/cg219/goffmpeg/mente
+module github.com/xfrr/goffmpeg/v2
 
 go 1.21
